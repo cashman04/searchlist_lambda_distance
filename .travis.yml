@@ -7,7 +7,7 @@ script: skip
 
 deploy:
   provider: lambda
-  function_name: "lambda-test"
+  function_name: "lambda-test1"
   zip: ./lambda_dist.zip
   publish: true
   role: "arn:aws:iam::223526545628:role/service-role/LambdaRole"
