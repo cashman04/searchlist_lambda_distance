@@ -22,4 +22,4 @@ before_deploy:
   - pwd; ls -lah; cd searchlist_distance; zip -r ../lambda_dist.zip *
 
 after_deploy:
-  - ls -lah | grep zip
+  - pwd; ls -lah
