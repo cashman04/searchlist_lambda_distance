@@ -8,7 +8,7 @@ script: skip
 deploy:
   provider: lambda
   function_name: "lambda-test"
-  zip: lambda_dist.zip
+  zip: ./lambda_dist.zip
   publish: true
   role: "arn:aws:iam::223526545628:role/service-role/LambdaRole"
   runtime: "python3.6"
@@ -19,4 +19,4 @@ deploy:
   secret_access_key: $AWS_SECRET_ACCESS_KEY
 
 before_deploy: 
-  - cd searchlist_distance; zip -r ../lambda_dist.zip *
+  - pwd; ls -lah; cd searchlist_distance; zip -r ../lambda_dist.zip *
