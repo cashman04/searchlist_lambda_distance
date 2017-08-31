@@ -1,0 +1,18 @@
+language: generic
+install: skip
+script: 
+  pwd
+  ls -lah
+  pip3 install requirements.txt -t searchlist_distance --user awscli
+  
+
+deploy:
+  provider: lambda
+  function_name: "lambda-test"
+  role: "arn:aws:iam::223526545628:role/service-role/LambdaRole"
+  runtime: "python3.6"
+  local_dir: searchlist_distance
+  handler_name: "lambda_dist"
+  region: $AWS_REGION_NAME
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
