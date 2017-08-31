@@ -1,8 +1,6 @@
 language: generic
 install: skip
 script: 
-  pwd
-  ls -lah
   pip3 install requirements.txt -t searchlist_distance --user awscli
   
 
