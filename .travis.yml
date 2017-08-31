@@ -8,7 +8,6 @@ script: skip
 deploy:
   provider: lambda
   function_name: searchlist_distance
-  publish: true
   role: "arn:aws:iam::223526545628:role/service-role/LambdaRole"
   runtime: python3.6
   handler_name: lambda_dist
