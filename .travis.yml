@@ -16,7 +16,7 @@ deploy:
   region: $AWS_REGION_NAME
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_ACCESS_KEY
-  zip: lambda_dist.zip
+  zip: /home/travis/build/cashman04/searchlist_lambda_distance/lambda_dist.zip
 
 before_deploy: 
   - pwd; ls -lah; cd searchlist_distance; zip -r ../lambda_dist.zip *
