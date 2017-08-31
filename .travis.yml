@@ -8,9 +8,10 @@ script: skip
 deploy:
   provider: lambda
   function_name: searchlist_distance
+  module_name: lambda_dist
   role: "arn:aws:iam::223526545628:role/service-role/LambdaRole"
   runtime: python3.6
-  handler_name: lambda_dist
+  handler_name: lambda_handler
   region: $AWS_REGION_NAME
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_ACCESS_KEY
