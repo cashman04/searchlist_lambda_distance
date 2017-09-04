@@ -8,7 +8,7 @@ script:
   - export REGION=$(if [ "$BRANCH" == "master" ]; then echo "prod"; elif [ "$BRANCH" == "cash" ]; then echo $BRANCH; elif [ "$BRANCH" == "cliff" ]; then echo $BRANCH; else echo "beta"; fi)
 deploy:
   provider: lambda
-  function_name: $REGION_searchlist_lambda_distance
+  function_name: "$REGION_searchlist_lambda_distance"
   module_name: lambda_dist
   role: arn:aws:iam::223526545628:role/service-role/LambdaRole
   runtime: python3.6
