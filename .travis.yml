@@ -10,9 +10,6 @@ script:
   - echo $TRAVIS_PULL_REQUEST_BRANCH
   - echo $BRANCH
   - echo $REGION
-branches:
-  only:
-  - /.*/
 deploy:
   provider: lambda
   function_name: "${REGION}_searchlist_lambda_distance"
@@ -24,6 +21,8 @@ deploy:
   access_key_id: "$AWS_ACCESS_KEY_ID"
   secret_access_key: "$AWS_SECRET_ACCESS_KEY"
   zip: searchlist_distance
+  on:
+    all_branches: true
 notifications:
   slack:
     secure: aZPC3Vi7U1H3uoke3/5PUDEDBVNXp16rBefLczUaUIuNruA/eWpZC05F8D63+V1/xKH3zQ7HOsWCcO/bCihsq8avTgpVUWct31gMeqM2XibwimzPwx49sZu1sDGWiXVswCHz6AeNjJYKQikCrkCkJDP3V0e266SmJKNfB8DWxf+XmlpSdW/Kz8Wd+9WhyKAZdh84GMBH3af5c2OtXJz9F64ZlvDNpxKZl6bMYUQDLMGYPcNQ8jOi/uoV/s8JaJQal1/5Z2dEztOTg2UoQl+LD8O+R+zTXxrsYjO2CR6YiXLICFKVfK8VrBXzUpmsBg3hFrvOxcPktxAoP6GjkdykO3KLltvMB4uSXooLVh0pR/h4K9VQUrxHPd8OMYb3jmBMF8k8qcr0VFzwfKGAwcV8oDKMJ2xn30+y1ZaYnl9i+YLjxwGpWlCooctVUKWPFe90YRrlUouMtJCexM1O2NSR45N5Rb9ShpvT/cYZBSGbsz02DSogHtS65odNAglv6b3z13nDPIvkr5PHdYAIXsT5da52vTEWYoOazoWSXKw/W1zd/EZ45jwf9jYs17pukuZDr1Q9av1VcuN7CrRp84zgllI80LXMeZ1OzA3BvNl66RZR60DLHA+/xTx43pr1Tpw8Q92dNIehvcRIsXit/OGETimiqk9u/uLv3DwNwrHxX9Y=
