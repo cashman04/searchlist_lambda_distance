@@ -5,7 +5,7 @@ install:
   - pip install -r requirements.txt -t searchlist_distance
 script:
   - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
-  - export REGION=$(if [ "$BRANCH" == "master_searchlist_lambda_distance" ]; then echo "prod"; elif [ "$BRANCH" == "cash" ]; then echo $BRANCH; elif [ "$BRANCH" == "cliff" ]; then echo $BRANCH; else echo "beta"; fi)
+  - export REGION=$(if [ "$BRANCH" == "master" ]; then echo "prod_searchlist_lambda_distance"; elif [ "$BRANCH" == "cash" ]; then echo $BRANCH; elif [ "$BRANCH" == "cliff" ]; then echo $BRANCH; else echo "beta"; fi)
   - echo $TRAVIS_BRANCH
   - echo $TRAVIS_PULL_REQUEST_BRANCH
   - echo $BRANCH
