@@ -15,8 +15,7 @@ deploy:
   region: $AWS_REGION_NAME
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_ACCESS_KEY
-#  zip: lambda_dist.zip
   zip: searchlist_distance
 
-#before_deploy: 
-#  - cd searchlist_distance; zip -r ../lambda_dist.zip * ; cd ..
+notifications:
+    slack: fort-kickass:$SLACK_KEY
