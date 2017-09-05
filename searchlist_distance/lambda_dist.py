@@ -1,8 +1,6 @@
 import json
 from pusher import Pusher
 import os
-buildnumber = BUILDNUMBER
-region = REGION
 
 
 pusher = Pusher(app_id = os.environ['pusher_app_id'], key = os.environ['pusher_key'], secret = os.environ['pusher_secret'], cluster = os.environ['pusher_cluster'])
@@ -26,11 +24,6 @@ class Distance:
       exit(400)     
       
   def calc_distance(self, city, distance):
-    blah = {}
-    blah['buildnumber'] = buildnumber
-    blah['region'] = region
-    return json.dumps(blah)
-
     #Initialize an empty array to use for all of our matches at the end
     matches = []
     
